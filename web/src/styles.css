@@ -1,0 +1,32 @@
+:root { --bg:#0f1218; --panel:#171b24; --line:#262c3a; --text:#e6e9f0; --muted:#8b93a7; --accent:#6c8cff; --ok:#3ecf8e; --bad:#ff6b6b; --warn:#f5b14c; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif; }
+.app { max-width:1300px; margin:0 auto; padding:0 20px 40px; }
+header { display:flex; align-items:center; gap:24px; padding:16px 0; }
+header h1 { font-size:18px; margin:0; } header nav { flex:1; display:flex; gap:6px; }
+h3 { margin:0 0 6px; font-size:15px; } h4 { margin:18px 0 6px; font-size:12px; text-transform:uppercase; letter-spacing:.05em; color:var(--muted); }
+.card { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:16px; margin-bottom:14px; }
+.row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:6px 0; } .between { justify-content:space-between; } .grow { flex:1; min-width:120px; }
+.split { display:grid; grid-template-columns:1fr 1fr; gap:14px; } .split.wide { grid-template-columns:minmax(340px,5fr) 7fr; align-items:start; }
+@media (max-width:900px){ .split, .split.wide { grid-template-columns:1fr; } }
+input, select, textarea, button { font:inherit; color:var(--text); background:#0c0f15; border:1px solid var(--line); border-radius:6px; padding:7px 10px; }
+textarea { width:100%; font-family:ui-monospace,Menlo,monospace; font-size:12.5px; } label { display:block; margin:8px 0; color:var(--muted); } label input { display:block; width:100%; margin-top:4px; }
+button { cursor:pointer; background:var(--accent); border-color:var(--accent); color:#fff; } button:disabled { opacity:.5; cursor:default; }
+button.ghost { background:transparent; border-color:var(--line); color:var(--text); } button.ghost.danger { color:var(--bad); }
+nav button { background:transparent; border-color:transparent; color:var(--muted); } nav button.active { color:var(--text); background:var(--panel); border-color:var(--line); }
+code, pre { font-family:ui-monospace,Menlo,monospace; font-size:12.5px; } pre { background:#0c0f15; padding:10px; border-radius:6px; overflow:auto; white-space:pre-wrap; word-break:break-all; }
+code.block { display:block; background:#0c0f15; padding:8px 10px; border-radius:6px; margin:8px 0; word-break:break-all; }
+.muted { color:var(--muted); } .small { font-size:12px; } .err { color:var(--bad); } .trunc { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.badge { display:inline-block; padding:1px 8px; border-radius:99px; font-size:11px; background:#232a3a; color:var(--muted); }
+.badge.ok,.badge.success { background:#12382a; color:var(--ok); } .badge.failed { background:#3d1d22; color:var(--bad); }
+.badge.retrying,.badge.pending { background:#3a2f17; color:var(--warn); }
+.stats { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:14px; }
+.stats div { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:10px 14px; } .stats b { display:block; font-size:22px; } .stats span { color:var(--muted); font-size:12px; } .stats .bad b { color:var(--bad); }
+.list { padding:4px; max-height:72vh; overflow:auto; } .item { display:flex; gap:8px; align-items:center; padding:8px 10px; border-radius:6px; cursor:pointer; } .item:hover { background:#1e2431; } .item.sel { background:#222b40; }
+.live { font-size:12px; color:var(--muted); } .live.on { color:var(--ok); }
+.delivery { border:1px solid var(--line); border-radius:8px; padding:10px; margin:8px 0; } .attempts { width:100%; font-size:12px; margin-top:6px; border-collapse:collapse; } .attempts td { padding:2px 8px 2px 0; color:var(--muted); }
+.rule { border-top:1px solid var(--line); padding:8px 0; } .builder { border-color:var(--accent); margin-top:12px; }
+.json { font-family:ui-monospace,Menlo,monospace; font-size:12.5px; background:#0c0f15; border-radius:6px; padding:10px; overflow:auto; max-height:360px; }
+.jchildren { margin-left:18px; } .jk { color:#9cb4ff; } .js { color:#a5e075; } .jv { color:#f5b14c; } .jn,.jdim { color:var(--muted); } .jtoggle { cursor:pointer; user-select:none; margin-right:4px; color:var(--muted); }
+details { margin:8px 0; } summary { cursor:pointer; color:var(--muted); }
+.login { max-width:420px; margin:12vh auto; padding:0 16px; }
